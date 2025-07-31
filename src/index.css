@@ -8,33 +8,61 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 26% 5%;
+    --foreground: 220 15% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 8%;
+    --card-foreground: 220 15% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 8%;
+    --popover-foreground: 220 15% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 140 75% 55%;
+    --primary-foreground: 220 26% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 250 75% 65%;
+    --secondary-foreground: 220 26% 5%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 85% 60%;
+    --accent-foreground: 220 26% 5%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 220 15% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 140 75% 55%;
+
+    /* TinkerFlow specific colors */
+    --flow-canvas: 220 26% 5%;
+    --flow-grid: 220 15% 12%;
+    
+    /* Node colors */
+    --node-file: 200 75% 55%;
+    --node-function: 140 75% 55%;
+    --node-class: 280 75% 65%;
+    --node-import: 45 85% 60%;
+    --node-error: 0 75% 60%;
+    
+    /* Node variants */
+    --node-typescript: 210 75% 60%;
+    --node-javascript: 50 85% 65%;
+    --node-react: 195 85% 60%;
+    --node-css: 320 75% 60%;
+    
+    /* Edge colors */
+    --edge-default: 220 10% 40%;
+    --edge-import: 140 60% 45%;
+    --edge-export: 45 70% 55%;
+    --edge-error: 0 60% 50%;
+    
+    /* Effects */
+    --glow-primary: 0 0 20px hsl(140 75% 55% / 0.3);
+    --glow-secondary: 0 0 20px hsl(250 75% 65% / 0.3);
+    --glow-accent: 0 0 15px hsl(45 85% 60% / 0.4);
 
     --radius: 0.5rem;
 
@@ -55,34 +83,49 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  .light {
+    --background: 220 15% 97%;
+    --foreground: 220 26% 5%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 5%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 5%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 140 75% 45%;
+    --primary-foreground: 220 15% 97%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 250 75% 55%;
+    --secondary-foreground: 220 15% 97%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 10% 92%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 85% 50%;
+    --accent-foreground: 220 15% 97%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 220 15% 97%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 220 10% 85%;
+    --input: 220 10% 85%;
+    --ring: 140 75% 45%;
+
+    /* TinkerFlow light mode colors */
+    --flow-canvas: 220 15% 97%;
+    --flow-grid: 220 10% 90%;
+    
+    --node-file: 200 75% 45%;
+    --node-function: 140 75% 45%;
+    --node-class: 280 75% 55%;
+    --node-import: 45 85% 50%;
+    --node-error: 0 75% 50%;
+    
+    --edge-default: 220 10% 60%;
+    --edge-import: 140 60% 35%;
+    --edge-export: 45 70% 45%;
+    --edge-error: 0 60% 40%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

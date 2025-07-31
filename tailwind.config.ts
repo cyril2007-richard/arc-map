@@ -61,7 +61,33 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				flow: {
+					canvas: 'hsl(var(--flow-canvas))',
+					grid: 'hsl(var(--flow-grid))'
+				},
+				node: {
+					file: 'hsl(var(--node-file))',
+					function: 'hsl(var(--node-function))',
+					class: 'hsl(var(--node-class))',
+					import: 'hsl(var(--node-import))',
+					error: 'hsl(var(--node-error))',
+					typescript: 'hsl(var(--node-typescript))',
+					javascript: 'hsl(var(--node-javascript))',
+					react: 'hsl(var(--node-react))',
+					css: 'hsl(var(--node-css))'
+				},
+				edge: {
+					default: 'hsl(var(--edge-default))',
+					import: 'hsl(var(--edge-import))',
+					export: 'hsl(var(--edge-export))',
+					error: 'hsl(var(--edge-error))'
 				}
+			},
+			boxShadow: {
+				'glow-primary': 'var(--glow-primary)',
+				'glow-secondary': 'var(--glow-secondary)',
+				'glow-accent': 'var(--glow-accent)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
