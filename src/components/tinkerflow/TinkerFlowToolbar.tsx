@@ -39,91 +39,97 @@ export default function TinkerFlowToolbar({ onRefresh }: TinkerFlowToolbarProps)
   };
 
   return (
-    <Card className="p-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <FileText className="w-5 h-5 text-primary" />
-            <h1 className="text-xl font-bold">TinkerFlow</h1>
-            <Badge variant="secondary">v1.0</Badge>
+    <div className="border-b border-border/50 bg-background/80 backdrop-blur-sm">
+      <div className="flex items-center justify-between px-6 py-3">
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded bg-gradient-to-br from-primary to-secondary 
+              shadow-glow-primary flex items-center justify-center">
+              <FileText className="w-4 h-4 text-background" />
+            </div>
+            <div>
+              <h1 className="text-lg font-futuristic font-bold text-foreground tracking-wider">
+                TINKERFLOW
+              </h1>
+              <div className="text-[10px] font-mono text-primary uppercase tracking-widest">
+                v2.0.1 • CYBER
+              </div>
+            </div>
           </div>
           
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <span className="font-medium text-foreground">{totalFiles}</span>
-              files
+          <div className="flex items-center gap-6 text-xs font-mono">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary shadow-glow-primary animate-pulse"></div>
+              <span className="text-muted-foreground">FILES</span>
+              <span className="text-primary font-bold">{totalFiles}</span>
             </div>
-            <div className="flex items-center gap-1">
-              <span className="font-medium text-foreground">{totalFunctions}</span>
-              functions
+            
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-node-function shadow-[0_0_4px_currentColor]"></div>
+              <span className="text-muted-foreground">FUNC</span>
+              <span className="text-node-function font-bold">{totalFunctions}</span>
             </div>
-            <div className="flex items-center gap-1">
-              <span className="font-medium text-foreground">{totalClasses}</span>
-              classes
+            
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-node-class shadow-[0_0_4px_currentColor]"></div>
+              <span className="text-muted-foreground">CLASS</span>
+              <span className="text-node-class font-bold">{totalClasses}</span>
             </div>
+            
             {modifiedFiles > 0 && (
-              <Badge variant="destructive">
-                {modifiedFiles} modified
-              </Badge>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-accent shadow-glow-accent animate-pulse-glow"></div>
+                <span className="text-accent font-bold animate-pulse">{modifiedFiles} MOD</span>
+              </div>
             )}
+            
             {filesWithErrors > 0 && (
-              <Badge variant="outline" className="border-destructive text-destructive">
-                {filesWithErrors} with errors
-              </Badge>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-destructive shadow-glow-error animate-pulse"></div>
+                <span className="text-destructive font-bold">{filesWithErrors} ERR</span>
+              </div>
             )}
           </div>
         </div>
 
         <div className="flex items-center gap-2">
           <Button
-            variant="outline"
+            variant="ghost"
             size="sm"
             onClick={handleSearch}
-            className="gap-2"
+            className="h-8 px-3 text-xs font-mono uppercase tracking-wider 
+              hover:bg-primary/10 hover:text-primary transition-all duration-300
+              border border-transparent hover:border-primary/30"
           >
-            <Search className="w-4 h-4" />
-            Search
+            <Search className="w-3 h-3 mr-1" />
+            SCAN
           </Button>
           
           <Button
-            variant="outline"
-            size="sm"
-            onClick={handleFilter}
-            className="gap-2"
-          >
-            <Filter className="w-4 h-4" />
-            Filter
-          </Button>
-          
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleExport}
-            className="gap-2"
-          >
-            <Download className="w-4 h-4" />
-            Export
-          </Button>
-          
-          <Button
-            variant="outline"
+            variant="ghost"
             size="sm"
             onClick={onRefresh}
-            className="gap-2"
+            className="h-8 px-3 text-xs font-mono uppercase tracking-wider
+              hover:bg-secondary/10 hover:text-secondary transition-all duration-300
+              border border-transparent hover:border-secondary/30"
           >
-            <RefreshCw className="w-4 h-4" />
-            Refresh
+            <RefreshCw className="w-3 h-3 mr-1" />
+            SYNC
           </Button>
           
           <Button
-            variant="outline"
+            variant="ghost"
             size="sm"
-            className="gap-2"
+            onClick={handleExport}
+            className="h-8 px-3 text-xs font-mono uppercase tracking-wider
+              hover:bg-accent/10 hover:text-accent transition-all duration-300
+              border border-transparent hover:border-accent/30"
           >
-            <Settings className="w-4 h-4" />
+            <Download className="w-3 h-3 mr-1" />
+            EXPORT
           </Button>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }

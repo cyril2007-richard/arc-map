@@ -8,61 +8,67 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 26% 5%;
-    --foreground: 220 15% 95%;
+    --background: 220 30% 3%;
+    --foreground: 200 20% 98%;
 
-    --card: 220 20% 8%;
-    --card-foreground: 220 15% 95%;
+    --card: 220 25% 4%;
+    --card-foreground: 200 15% 95%;
 
-    --popover: 220 20% 8%;
-    --popover-foreground: 220 15% 95%;
+    --popover: 220 25% 4%;
+    --popover-foreground: 200 15% 95%;
 
-    --primary: 140 75% 55%;
-    --primary-foreground: 220 26% 5%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 30% 3%;
 
-    --secondary: 250 75% 65%;
-    --secondary-foreground: 220 26% 5%;
+    --secondary: 280 80% 60%;
+    --secondary-foreground: 220 30% 3%;
 
-    --muted: 220 15% 12%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 220 20% 8%;
+    --muted-foreground: 200 10% 60%;
 
-    --accent: 45 85% 60%;
-    --accent-foreground: 220 26% 5%;
+    --accent: 320 90% 65%;
+    --accent-foreground: 220 30% 3%;
 
-    --destructive: 0 75% 60%;
-    --destructive-foreground: 220 15% 95%;
+    --destructive: 0 90% 65%;
+    --destructive-foreground: 200 15% 95%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 140 75% 55%;
+    --border: 220 15% 12%;
+    --input: 220 15% 12%;
+    --ring: 180 100% 50%;
 
-    /* TinkerFlow specific colors */
-    --flow-canvas: 220 26% 5%;
-    --flow-grid: 220 15% 12%;
+    /* Futuristic Canvas */
+    --flow-canvas: 220 30% 3%;
+    --flow-grid: 180 50% 10%;
     
-    /* Node colors */
-    --node-file: 200 75% 55%;
-    --node-function: 140 75% 55%;
-    --node-class: 280 75% 65%;
-    --node-import: 45 85% 60%;
-    --node-error: 0 75% 60%;
+    /* Neon Node Colors */
+    --node-file: 180 100% 50%;
+    --node-function: 120 80% 55%;
+    --node-class: 280 90% 65%;
+    --node-import: 60 90% 60%;
+    --node-error: 0 90% 65%;
     
-    /* Node variants */
-    --node-typescript: 210 75% 60%;
-    --node-javascript: 50 85% 65%;
-    --node-react: 195 85% 60%;
-    --node-css: 320 75% 60%;
+    /* Language-specific neon colors */
+    --node-typescript: 210 100% 60%;
+    --node-javascript: 50 100% 60%;
+    --node-react: 190 100% 55%;
+    --node-css: 320 90% 65%;
     
-    /* Edge colors */
-    --edge-default: 220 10% 40%;
-    --edge-import: 140 60% 45%;
-    --edge-export: 45 70% 55%;
-    --edge-error: 0 60% 50%;
+    /* Futuristic Edges */
+    --edge-default: 200 30% 40%;
+    --edge-import: 180 80% 50%;
+    --edge-export: 120 70% 50%;
+    --edge-error: 0 80% 60%;
     
-    /* Effects */
-    --glow-primary: 0 0 20px hsl(140 75% 55% / 0.3);
-    --glow-secondary: 0 0 20px hsl(250 75% 65% / 0.3);
-    --glow-accent: 0 0 15px hsl(45 85% 60% / 0.4);
+    /* Cyber Glows */
+    --glow-primary: 0 0 30px hsl(180 100% 50% / 0.6);
+    --glow-secondary: 0 0 25px hsl(280 80% 60% / 0.5);
+    --glow-accent: 0 0 20px hsl(320 90% 65% / 0.7);
+    --glow-error: 0 0 25px hsl(0 90% 65% / 0.6);
+    --glow-node: 0 0 15px currentColor;
+    
+    /* Cyber borders */
+    --border-glow: inset 0 0 10px hsl(180 100% 50% / 0.2);
+    --border-accent: inset 0 0 8px hsl(320 90% 65% / 0.3);
 
     --radius: 0.5rem;
 

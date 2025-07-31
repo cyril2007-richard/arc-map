@@ -17,43 +17,37 @@ function FunctionNode({ data }: FunctionNodeProps) {
 
   return (
     <div 
-      className={`relative min-w-[120px] rounded-lg border-2 ${
+      className={`relative min-w-[100px] rounded border ${
         isClass 
-          ? 'bg-node-class border-node-class/50' 
-          : 'bg-node-function border-node-function/50'
-      } shadow-lg hover:shadow-glow-secondary transition-all duration-200 
-        cursor-pointer group`}
+          ? 'bg-node-class/10 border-node-class/50 text-node-class' 
+          : 'bg-node-function/10 border-node-function/50 text-node-function'
+      } backdrop-blur-sm shadow-[0_0_8px_currentColor] hover:shadow-[0_0_15px_currentColor] 
+        transition-all duration-300 cursor-pointer group animate-fade-in`}
       onClick={() => onClick(name, file)}
     >
       <Handle 
         type="target" 
         position={Position.Top} 
-        className="w-3 h-3 bg-primary border-2 border-background" 
+        className="w-1.5 h-1.5 bg-current border-0 shadow-[0_0_4px_currentColor]" 
       />
       
-      <div className="p-3">
-        <div className="flex items-center gap-2 mb-1">
+      <div className="p-2">
+        <div className="flex items-center gap-1.5 mb-1">
           {isClass ? (
-            <Zap className="w-4 h-4 text-node-class" />
+            <Zap className="w-3 h-3 opacity-80" />
           ) : (
-            <Braces className="w-4 h-4 text-node-function" />
+            <Braces className="w-3 h-3 opacity-80" />
           )}
-          <div className="flex-1 min-w-0">
-            <div className="text-sm font-medium text-foreground truncate">
-              {name}
-            </div>
+          <div className="text-xs font-mono font-medium truncate">
+            {name}
           </div>
         </div>
         
-        <div className="text-xs text-muted-foreground truncate">
+        <div className="text-[9px] text-current/60 truncate font-mono">
           {file.split('/').pop()}
         </div>
         
-        <div className={`inline-block px-1.5 py-0.5 rounded text-xs font-medium mt-1 ${
-          isClass 
-            ? 'bg-node-class/20 text-node-class' 
-            : 'bg-node-function/20 text-node-function'
-        }`}>
+        <div className="text-[8px] font-mono font-bold uppercase tracking-widest mt-1 opacity-60">
           {type}
         </div>
       </div>

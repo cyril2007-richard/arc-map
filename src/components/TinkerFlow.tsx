@@ -20,17 +20,17 @@ export default function TinkerFlow() {
   };
 
   return (
-    <div className="h-screen bg-background flex flex-col">
+    <div className="h-screen bg-background flex flex-col overflow-hidden">
       <TinkerFlowToolbar onRefresh={handleRefresh} />
       
-      <div className="flex-1 flex">
+      <div className="flex-1 flex min-h-0">
         {/* Main Canvas */}
         <div className="flex-1 relative">
           <TinkerFlowCanvas onFileSelect={handleFileSelect} />
         </div>
         
         {/* Side Panel */}
-        <div className="w-80 border-l border-border bg-card">
+        <div className="w-80">
           <FileDetails file={selectedFile} />
         </div>
       </div>

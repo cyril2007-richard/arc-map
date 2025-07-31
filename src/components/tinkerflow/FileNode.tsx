@@ -43,66 +43,70 @@ function FileNode({ data }: FileNodeProps) {
 
   return (
     <div 
-      className={`relative min-w-[180px] rounded-lg border-2 ${nodeColor} 
-        shadow-lg hover:shadow-glow-primary transition-all duration-200 
-        cursor-pointer group`}
+      className={`relative min-w-[160px] rounded border ${nodeColor} 
+        backdrop-blur-sm bg-opacity-90 shadow-neon hover:shadow-cyber 
+        transition-all duration-300 cursor-pointer group animate-fade-in`}
       onClick={() => onFileClick(file)}
     >
       <Handle 
         type="target" 
         position={Position.Left} 
-        className="w-3 h-3 bg-primary border-2 border-background" 
+        className="w-2 h-2 bg-primary border-0 shadow-glow-primary" 
       />
       <Handle 
         type="source" 
         position={Position.Right} 
-        className="w-3 h-3 bg-primary border-2 border-background" 
+        className="w-2 h-2 bg-primary border-0 shadow-glow-primary" 
       />
       
-      <div className="p-3">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-lg">{fileIcon}</span>
+      <div className="p-3 space-y-2">
+        <div className="flex items-center gap-2">
+          <span className="text-base filter drop-shadow-[0_0_4px_currentColor]">{fileIcon}</span>
           <div className="flex-1 min-w-0">
-            <div className="text-sm font-medium text-foreground truncate">
+            <div className="text-xs font-futuristic font-medium text-foreground truncate tracking-wide">
               {file.path.split('/').pop()}
             </div>
-            <div className="text-xs text-muted-foreground truncate">
+            <div className="text-[10px] text-muted-foreground truncate font-mono opacity-70">
               {file.path}
             </div>
           </div>
-          {file.modified && (
-            <Edit className="w-3 h-3 text-accent" />
-          )}
-          {hasErrors && (
-            <AlertTriangle className="w-3 h-3 text-destructive" />
-          )}
+          <div className="flex gap-1">
+            {file.modified && (
+              <Edit className="w-3 h-3 text-accent animate-pulse-glow" />
+            )}
+            {hasErrors && (
+              <AlertTriangle className="w-3 h-3 text-destructive animate-pulse-glow" />
+            )}
+          </div>
         </div>
         
-        <div className="space-y-1">
-          <div className="flex justify-between text-xs text-muted-foreground">
-            <span>{file.lines} lines</span>
-            <span className={`px-1.5 py-0.5 rounded text-xs font-medium ${
-              file.type === 'component' ? 'bg-node-react/20 text-node-react' :
-              file.type === 'hook' ? 'bg-node-function/20 text-node-function' :
-              file.type === 'service' ? 'bg-node-class/20 text-node-class' :
-              'bg-muted text-muted-foreground'
-            }`}>
-              {file.type}
-            </span>
-          </div>
-          
-          {file.functions.length > 0 && (
-            <div className="text-xs text-muted-foreground">
-              <span className="font-medium">{file.functions.length}</span> functions
-            </div>
-          )}
-          
-          {hasErrors && (
-            <div className="text-xs text-destructive">
-              {file.errors.length} error{file.errors.length !== 1 ? 's' : ''}
-            </div>
-          )}
+        <div className="flex justify-between items-center text-[10px]">
+          <span className="text-muted-foreground font-mono">{file.lines}L</span>
+          <span className={`px-2 py-0.5 rounded-full text-[9px] font-mono font-bold uppercase tracking-wider
+            border border-current shadow-[0_0_4px_currentColor] ${
+            file.type === 'component' ? 'text-node-react bg-node-react/10' :
+            file.type === 'hook' ? 'text-node-function bg-node-function/10' :
+            file.type === 'service' ? 'text-node-class bg-node-class/10' :
+            'text-muted-foreground bg-muted/10'
+          }`}>
+            {file.type}
+          </span>
         </div>
+        
+        {(file.functions.length > 0 || hasErrors) && (
+          <div className="flex justify-between text-[9px] font-mono">
+            {file.functions.length > 0 && (
+              <span className="text-node-function">
+                {file.functions.length} fn
+              </span>
+            )}
+            {hasErrors && (
+              <span className="text-destructive animate-pulse">
+                {file.errors.length} err
+              </span>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -103,15 +103,11 @@ export default function TinkerFlowCanvas({ onFileSelect }: TinkerFlowCanvasProps
               source: `file-${targetFileIndex}`,
               target: `file-${sourceIndex}`,
               type: 'smoothstep',
-              animated: true,
+              animated: false,
               style: { 
                 stroke: 'hsl(var(--edge-import))',
-                strokeWidth: 2 
-              },
-              label: 'import',
-              labelStyle: { 
-                fontSize: 10, 
-                fill: 'hsl(var(--edge-import))' 
+                strokeWidth: 1.5,
+                opacity: 0.7
               },
             });
           }
@@ -133,7 +129,7 @@ export default function TinkerFlowCanvas({ onFileSelect }: TinkerFlowCanvasProps
   );
 
   return (
-    <div className="w-full h-full bg-flow-canvas">
+    <div className="w-full h-full bg-flow-canvas relative overflow-hidden">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -144,20 +140,25 @@ export default function TinkerFlowCanvas({ onFileSelect }: TinkerFlowCanvasProps
         fitView
         attributionPosition="bottom-left"
         className="bg-flow-canvas"
+        proOptions={{ hideAttribution: true }}
       >
         <Background 
           color="hsl(var(--flow-grid))" 
-          gap={20} 
-          size={1}
+          gap={30} 
+          size={0.5}
         />
         <Controls 
-          className="bg-card border border-border shadow-lg rounded-lg"
+          className="bg-card/50 border border-border/30 shadow-lg rounded backdrop-blur-sm"
+          showZoom={true}
+          showFitView={true}
+          showInteractive={false}
         />
         <MiniMap 
           nodeColor="hsl(var(--node-file))"
-          className="bg-card border border-border shadow-lg rounded-lg"
+          className="bg-card/50 border border-border/30 shadow-lg rounded backdrop-blur-sm"
           pannable
           zoomable
+          position="bottom-right"
         />
       </ReactFlow>
     </div>
